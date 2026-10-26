@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guia interativo sobre mutações, câncer, teorias evolutivas e evidências da evolução.">
+  <meta name="theme-color" content="#10251f">
+  <title>BioLab — Mutação & Evolução</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="BioLab — início">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+      <span><strong>BIO</strong>LAB</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#mutacoes">Mutações</a>
+      <a href="#cancer">Câncer</a>
+      <a href="#evolucao">Evolução</a>
+      <a href="#evidencias">Evidências</a>
+    </nav>
+    <button class="quiz-pill" data-open-quiz>
+      <span aria-hidden="true">✦</span> Praticar agora
+    </button>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow light"><span></span> Biologia • Ensino Médio</p>
+        <h1>Da mudança no DNA<br>à mudança das <em>espécies.</em></h1>
+        <p class="hero-lead">Entenda como uma troca microscópica pode influenciar células, organismos e populações inteiras — com exemplos, experiências interativas e questões comentadas.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#trilha">Começar a trilha <span>→</span></a>
+          <button class="button ghost" data-open-quiz>Fazer diagnóstico</button>
+        </div>
+        <div class="hero-stats" aria-label="Conteúdo do site">
+          <div><strong>4</strong><span>módulos</span></div>
+          <div><strong>16</strong><span>questões</span></div>
+          <div><strong>6</strong><span>evidências</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Ilustração conectando DNA, célula e evolução">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="dna-stage" aria-hidden="true">
+          <div class="dna-label">VARIAÇÃO</div>
+          <div class="helix">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="cell cell-a"><span></span></div>
+          <div class="cell cell-b"><span></span></div>
+          <div class="cell cell-c"><span></span></div>
+        </div>
+        <div class="visual-note note-a"><b>01</b><span>mutação</span></div>
+        <div class="visual-note note-b"><b>02</b><span>seleção</span></div>
+        <div class="visual-note note-c"><b>03</b><span>evolução</span></div>
+      </div>
+      <a class="scroll-cue" href="#trilha"><span></span> explorar</a>
+    </section>
+
+    <section class="trail-section" id="trilha">
+      <div class="section-intro centered">
+        <p class="eyebrow"><span></span> Sua trilha de aprendizagem</p>
+        <h2>Do mecanismo à consequência</h2>
+        <p>Estude na ordem sugerida ou entre direto no assunto que precisa revisar.</p>
+      </div>
+      <div class="trail-grid">
+        <a class="trail-card coral" href="#mutacoes">
+          <span class="trail-number">01</span>
+          <div class="trail-icon dna-mini" aria-hidden="true">⌁</div>
+          <p>Fundamentos</p>
+          <h3>Mutações</h3>
+          <span class="trail-desc">Gênicas, cromossômicas e seus efeitos</span>
+          <span class="trail-link">Explorar módulo <b>↗</b></span>
+        </a>
+        <a class="trail-card violet" href="#cancer">
+          <span class="trail-number">02</span>
+          <div class="trail-icon" aria-hidden="true">◎</div>
+          <p>Aplicação celular</p>
+          <h3>Câncer</h3>
+          <span class="trail-desc">Ciclo celular, p53, tumores e telomerase</span>
+          <span class="trail-link">Explorar módulo <b>↗</b></span>
+        </a>
+        <a class="trail-card green" href="#evolucao">
+          <span class="trail-number">03</span>
+          <div class="trail-icon" aria-hidden="true">↟</div>
+          <p>Populações</p>
+          <h3>Evolução</h3>
+          <span class="trail-desc">Lamarck, Darwin e seleção natural</span>
+          <span class="trail-link">Explorar módulo <b>↗</b></span>
+        </a>
+        <a class="trail-card amber" href="#evidencias">
+          <span class="trail-number">04</span>
+          <div class="trail-icon" aria-hidden="true">⌕</div>
+          <p>Como sabemos?</p>
+          <h3>Evidências</h3>
+          <span class="trail-desc">Fósseis, anatomia, embriologia e DNA</span>
+          <span class="trail-link">Explorar módulo <b>↗</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="module mutation-module" id="mutacoes">
+      <div class="module-heading">
+        <div>
+          <p class="chapter">Capítulo 01 <span>•</span> Fundamentos</p>
+          <h2>Mutações: quando a<br>receita <em>muda</em></h2>
+        </div>
+        <p class="module-summary">Mutações são alterações no material genético. Elas criam <strong>variabilidade</strong> — a matéria-prima sobre a qual a seleção natural pode agir.</p>
+      </div>
+
+      <div class="definition-band">
+        <span class="definition-index">01</span>
+        <div>
+          <small>IDEIA-CHAVE</small>
+          <p>Uma mutação não nasce “para ajudar”. Ela surge <strong>sem direção</strong>; seu efeito depende do local alterado e do ambiente.</p>
+        </div>
+        <div class="pill-pair"><span>DNA</span><i>→</i><span>variação</span></div>
+      </div>
+
+      <div class="two-kinds">
+        <article>
+          <div class="cell-art soma" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div><p class="label">NO CORPO</p><h3>Somáticas</h3></div>
+          <p>Acontecem nas células do corpo. Em geral, ficam restritas ao indivíduo e <strong>não passam à prole</strong>.</p>
+          <p class="example"><b>Exemplo</b> Uma mutação em uma célula da pele após exposição excessiva à radiação UV.</p>
+        </article>
+        <article>
+          <div class="cell-art germ" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div><p class="label">NA LINHAGEM REPRODUTIVA</p><h3>Germinativas</h3></div>
+          <p>Ocorrem nas células que originam gametas. Podem ser <strong>herdadas pelos descendentes</strong>.</p>
+          <p class="example"><b>Exemplo</b> Um alelo novo presente em um gameta integra o DNA do descendente após a fecundação.</p>
+        </article>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-top">
+          <div>
+            <p class="eyebrow"><span></span> Experimente</p>
+            <h3>Laboratório de mutações gênicas</h3>
+            <p>Altere a sequência e observe o que pode acontecer com a leitura do DNA.</p>
+          </div>
+          <span class="lab-badge">INTERATIVO</span>
+        </div>
+        <div class="sequence-panel">
+          <div class="sequence-row">
+            <span>DNA original</span>
+            <code id="original-sequence" aria-label="Sequência original">ATG CCT GAA TGC</code>
+          </div>
+          <div class="sequence-arrow">↓</div>
+          <div class="sequence-row result">
+            <span id="result-label">Escolha uma alteração</span>
+            <code id="mutated-sequence" aria-live="polite">ATG CCT GAA TGC</code>
+          </div>
+        </div>
+        <div class="mutation-controls" role="group" aria-label="Escolher tipo de mutação">
+          <button data-mutation="substitution"><b>Substituição</b><span>troca 1 base</span></button>
+          <button data-mutation="insertion"><b>Inserção</b><span>adiciona base</span></button>
+          <button data-mutation="deletion"><b>Deleção</b><span>remove base</span></button>
+        </div>
+        <div class="explanation-box" id="mutation-explanation">
+          <span class="bulb">↳</span>
+          <p><strong>Teste os três casos.</strong> Inserções e deleções que não envolvem múltiplos de três podem deslocar o quadro de leitura e modificar muitos códons a partir do ponto alterado.</p>
+        </div>
+      </div>
+
+      <div class="mutation-levels">
+        <div class="levels-copy">
+          <p class="eyebrow"><span></span> Zoom: cromossomos</p>
+          <h3>Quando a mudança é maior</h3>
+          <p>Além de afetar poucas bases, mutações podem alterar a estrutura ou a quantidade de cromossomos.</p>
+        </div>
+        <div class="chromosome-list">
+          <div class="chrom-row"><b>Deleção</b><span class="chrom"><i></i><i></i><i></i><i class="missing"></i></span><small>perda de segmento</small></div>
+          <div class="chrom-row"><b>Duplicação</b><span class="chrom"><i></i><i></i><i></i><i></i><i></i></span><small>repetição de segmento</small></div>
+          <div class="chrom-row"><b>Inversão</b><span class="chrom"><i></i><i class="flip"></i><i></i><i></i></span><small>trecho em ordem inversa</small></div>
+          <div class="chrom-row"><b>Translocação</b><span class="chrom two"><i></i><i></i><i></i><i></i></span><small>troca entre não homólogos</small></div>
+        </div>
+      </div>
+
+      <div class="number-note">
+        <div><span>3n</span><span>4n</span><b>Euploidia</b><p>Altera conjuntos cromossômicos inteiros. É comum em plantas.</p></div>
+        <div><span>2n−1</span><span>2n+1</span><b>Aneuploidia</b><p>Falta ou sobra um ou mais cromossomos, geralmente por não disjunção.</p></div>
+      </div>
+
+      <div class="syndrome-table-wrap">
+        <div class="subheading-row"><h3>Exemplos de aneuploidias humanas</h3><span>Não são “graus” de uma mesma condição</span></div>
+        <div class="syndrome-table">
+          <div class="table-head"><span>Condição</span><span>Alteração cromossômica</span><span>Classificação</span></div>
+          <div><b>Turner</b><span>45, X</span><em>monossomia sexual</em></div>
+          <div><b>Down</b><span>trissomia do 21</span><em>autossômica</em></div>
+          <div><b>Edwards</b><span>trissomia do 18</span><em>autossômica</em></div>
+          <div><b>Patau</b><span>trissomia do 13</span><em>autossômica</em></div>
+          <div><b>Klinefelter</b><span>47, XXY</span><em>trissomia sexual</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module cancer-module" id="cancer">
+      <div class="module-heading light-heading">
+        <div>
+          <p class="chapter">Capítulo 02 <span>•</span> Aplicação celular</p>
+          <h2>Quando os freios<br><em>falham</em></h2>
+        </div>
+        <p class="module-summary">O câncer resulta do acúmulo de mutações que desregulam a proliferação, o reparo do DNA e a morte celular programada.</p>
+      </div>
+
+      <div class="cancer-grid">
+        <div class="cycle-card">
+          <div class="cycle-center"><b>CICLO</b><span>celular</span></div>
+          <button class="cycle-segment g1 active" data-phase="g1"><b>G1</b><small>crescimento</small></button>
+          <button class="cycle-segment s" data-phase="s"><b>S</b><small>replicação</small></button>
+          <button class="cycle-segment g2" data-phase="g2"><b>G2</b><small>preparo</small></button>
+          <button class="cycle-segment m" data-phase="m"><b>M</b><small>divisão</small></button>
+          <button class="cycle-segment g0" data-phase="g0"><b>G0</b><small>repouso</small></button>
+        </div>
+        <div class="cycle-explain">
+          <p class="eyebrow light"><span></span> Clique nas fases</p>
+          <h3 id="phase-title">G1 — crescer e conferir</h3>
+          <p id="phase-text">A célula aumenta de tamanho, produz proteínas e organelas. Antes de avançar, pontos de checagem avaliam se as condições são adequadas.</p>
+          <div class="checkpoint"><span>CHECKPOINT</span><p>Ciclinas e outras proteínas ajudam a coordenar a passagem ordenada pelas fases.</p></div>
+        </div>
+      </div>
+
+      <div class="brake-accelerator">
+        <article class="brake">
+          <div class="road-sign">Ⅱ</div>
+          <p class="label">O FREIO</p>
+          <h3>Genes supressores de tumor</h3>
+          <p>Reduzem a divisão, corrigem danos ou acionam a apoptose. Se perdem a função, o “freio” deixa de funcionar.</p>
+          <div class="gene-chip"><b>TP53</b><span>interrompe o ciclo diante de dano; pode ativar apoptose</span></div>
+        </article>
+        <article class="accelerator">
+          <div class="road-sign">»</div>
+          <p class="label">O ACELERADOR</p>
+          <h3>Proto-oncogenes → oncogenes</h3>
+          <p>Proto-oncogenes participam normalmente do crescimento. Mutações podem mantê-los ativados como oncogenes.</p>
+          <div class="gene-chip"><b>EFEITO</b><span>sinais de proliferação ficam ligados em excesso</span></div>
+        </article>
+      </div>
+
+      <div class="cancer-concepts">
+        <div class="concept-panel apoptosis">
+          <span class="concept-num">A</span>
+          <div><p class="label">APOPTOSE</p><h3>A saída de segurança</h3><p>Morte celular programada. Elimina células muito danificadas; falhas nessa resposta permitem a sobrevivência de células alteradas.</p></div>
+        </div>
+        <div class="concept-panel telomere">
+          <span class="concept-num">T</span>
+          <div><p class="label">TELOMERASE</p><h3>O relógio é contornado</h3><p>Telômeros encurtam com divisões. Muitas células cancerosas reativam a telomerase e mantêm a capacidade de se dividir.</p></div>
+        </div>
+      </div>
+
+      <div class="tumor-compare">
+        <div class="compare-copy">
+          <p class="eyebrow light"><span></span> Não confunda</p>
+          <h3>Benigno × maligno</h3>
+          <p>“Tumor” descreve uma massa celular; a capacidade de invadir tecidos e formar metástases diferencia o comportamento maligno.</p>
+        </div>
+        <div class="tumor-panels">
+          <div class="tumor-card">
+            <div class="tumor-art benign" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <b>Benigno</b><span>crescimento localizado e delimitado</span>
+          </div>
+          <div class="tumor-card">
+            <div class="tumor-art malignant" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <b>Maligno</b><span>invade tecidos; pode formar metástases</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module evolution-module" id="evolucao">
+      <div class="module-heading">
+        <div>
+          <p class="chapter">Capítulo 03 <span>•</span> Populações</p>
+          <h2>Evolução é mudança<br>entre <em>gerações</em></h2>
+        </div>
+        <p class="module-summary">Na síntese moderna, evolução é a mudança das frequências dos alelos de uma <strong>população</strong> ao longo das gerações.</p>
+      </div>
+
+      <div class="not-this">
+        <span>!</span>
+        <p><strong>Indivíduos não evoluem durante a vida.</strong> Populações evoluem quando variantes herdáveis ficam mais ou menos frequentes ao longo das gerações.</p>
+      </div>
+
+      <div class="theory-compare">
+        <article class="lamarck-card">
+          <div class="portrait-letter">L</div>
+          <p class="year">1744—1829</p>
+          <h3>Jean-Baptiste Lamarck</h3>
+          <ul>
+            <li><span>01</span> Lei do uso e desuso</li>
+            <li><span>02</span> Herança de caracteres adquiridos</li>
+          </ul>
+          <div class="giraffe-story">
+            <div class="giraffes" aria-hidden="true"><span>♧</span><span class="tall">♧</span></div>
+            <p><b>Girafas, segundo Lamarck:</b> o esforço para alcançar folhas alongaria o pescoço, e essa característica adquirida seria transmitida.</p>
+          </div>
+          <p class="verdict">Valor histórico: defendeu que espécies mudam. O mecanismo proposto não explica a evolução biológica em geral.</p>
+        </article>
+        <article class="darwin-card">
+          <div class="portrait-letter">D</div>
+          <p class="year">1809—1882</p>
+          <h3>Charles Darwin</h3>
+          <ul>
+            <li><span>01</span> Variações existem antes da seleção</li>
+            <li><span>02</span> Seleção natural favorece certas variantes</li>
+          </ul>
+          <div class="giraffe-story">
+            <div class="giraffes varied" aria-hidden="true"><span>♧</span><span class="tall">♧</span><span class="mid">♧</span></div>
+            <p><b>Girafas, segundo Darwin:</b> indivíduos já variavam; em certo ambiente, pescoços maiores davam vantagem reprodutiva.</p>
+          </div>
+          <p class="verdict accepted">Base aceita, hoje integrada à genética na teoria sintética da evolução.</p>
+        </article>
+      </div>
+
+      <div class="selection-lab">
+        <div class="selection-copy">
+          <p class="eyebrow"><span></span> Simulação</p>
+          <h3>Seleção em ação</h3>
+          <p>Besouros claros e escuros vivem sobre um solo escuro. Aves enxergam os mais contrastantes com maior facilidade.</p>
+          <button id="run-selection" class="button dark">Avançar uma geração <span>→</span></button>
+          <button id="reset-selection" class="text-button">reiniciar simulação</button>
+        </div>
+        <div class="beetle-world">
+          <div class="generation"><span>GERAÇÃO</span><b id="generation-number">1</b></div>
+          <div class="beetle-field" id="beetle-field" aria-live="polite"></div>
+          <div class="population-bars">
+            <div><span>claros</span><i><b id="light-bar"></b></i><strong id="light-count">8</strong></div>
+            <div><span>escuros</span><i><b id="dark-bar"></b></i><strong id="dark-count">8</strong></div>
+          </div>
+          <p id="selection-result">A população começa com a mesma quantidade de cada variante.</p>
+        </div>
+      </div>
+
+      <div class="selection-steps">
+        <div><span>1</span><b>Variação</b><p>Indivíduos de uma população apresentam diferenças herdáveis.</p></div>
+        <div><span>2</span><b>Pressão seletiva</b><p>Recursos limitados, predadores e clima afetam sobrevivência e reprodução.</p></div>
+        <div><span>3</span><b>Reprodução diferencial</b><p>Algumas variantes deixam, em média, mais descendentes.</p></div>
+        <div><span>4</span><b>Mudança populacional</b><p>A frequência das variantes muda ao longo das gerações.</p></div>
+      </div>
+    </section>
+
+    <section class="module evidence-module" id="evidencias">
+      <div class="module-heading light-heading">
+        <div>
+          <p class="chapter">Capítulo 04 <span>•</span> Como sabemos?</p>
+          <h2>Pistas que contam<br>a <em>mesma história</em></h2>
+        </div>
+        <p class="module-summary">A evolução é sustentada por linhas independentes de evidência que convergem: rochas, corpos, embriões e moléculas.</p>
+      </div>
+
+      <div class="evidence-grid">
+        <article class="fossil evidence-card">
+          <span class="evidence-count">01</span>
+          <div class="fossil-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="label">REGISTRO FÓSSIL</p>
+          <h3>Passado nas rochas</h3>
+          <p>Restos ou vestígios preservados permitem reconstruir mudanças, extinções e formas transicionais no tempo geológico.</p>
+        </article>
+        <article class="homology evidence-card">
+          <span class="evidence-count">02</span>
+          <div class="limbs" aria-hidden="true"><span>▰━╸</span><span>▰┳╸</span><span>▰┻╸</span></div>
+          <p class="label">HOMOLOGIA</p>
+          <h3>Mesma origem, funções diferentes</h3>
+          <p>Braço humano, asa de morcego e nadadeira de baleia compartilham um plano estrutural herdado de ancestral comum.</p>
+        </article>
+        <article class="analogy evidence-card">
+          <span class="evidence-count">03</span>
+          <div class="wings" aria-hidden="true"><span>◖</span><b>≠</b><span>◗</span></div>
+          <p class="label">ANALOGIA</p>
+          <h3>Mesma função, origens diferentes</h3>
+          <p>Asas de aves e insetos realizam voo, mas têm origens evolutivas distintas: convergência adaptativa.</p>
+        </article>
+        <article class="vestigial evidence-card">
+          <span class="evidence-count">04</span>
+          <div class="tailbone" aria-hidden="true">⌇</div>
+          <p class="label">ESTRUTURAS VESTIGIAIS</p>
+          <h3>Marcas da ancestralidade</h3>
+          <p>Cóccix, músculos auriculares e outros traços reduzidos ajudam a revelar a história evolutiva.</p>
+        </article>
+        <article class="molecular evidence-card wide">
+          <span class="evidence-count">05</span>
+          <div class="molecule-lines" aria-hidden="true"><code>ATG<span>C</span>CTAAG</code><code>ATG<span>T</span>CTAAG</code><code>ATG<span>C</span>CTGAG</code></div>
+          <div><p class="label">EVIDÊNCIAS MOLECULARES</p><h3>Parentesco escrito no DNA</h3><p>O código genético quase universal e a comparação de sequências de DNA e proteínas permitem estimar relações de parentesco. Em geral, maior semelhança indica ancestral comum mais recente.</p></div>
+        </article>
+        <article class="embryo evidence-card wide">
+          <span class="evidence-count">06</span>
+          <div class="embryos" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div><p class="label">EMBRIOLOGIA COMPARADA</p><h3>Semelhanças no desenvolvimento</h3><p>Padrões embrionários compartilhados entre grupos podem refletir estruturas e programas de desenvolvimento herdados de ancestrais comuns.</p></div>
+        </article>
+      </div>
+
+      <div class="memory-rule">
+        <span>H</span><p><strong>Homologia = História compartilhada.</strong> Pense no “H”. A função pode mudar; a origem evolutiva é comum.</p>
+        <span>A</span><p><strong>Analogia = Atividade parecida.</strong> A função se parece; a origem evolutiva é diferente.</p>
+      </div>
+    </section>
+
+    <section class="review-section" id="revisao">
+      <div class="review-copy">
+        <p class="eyebrow"><span></span> Hora de consolidar</p>
+        <h2>Entender é bom.<br><em>Conseguir explicar</em> é melhor.</h2>
+        <p>Responda às questões e receba feedback imediato. O quiz mistura conceitos e situações-problema.</p>
+        <button class="button primary coral-button" data-open-quiz>Iniciar quiz <span>→</span></button>
+      </div>
+      <div class="review-board" aria-hidden="true">
+        <div class="paper paper-a"><span>A</span><p>Uma mutação somática é herdável?</p><i></i></div>
+        <div class="paper paper-b"><span>B</span><p>Seleção natural cria a variação?</p><i></i></div>
+        <div class="paper paper-c"><span>C</span><p>Homologia indica o quê?</p><i></i></div>
+        <div class="stamp">PRATIQUE<br><b>AGORA</b></div>
+      </div>
+    </section>
+
+    <section class="glossary-section" id="glossario">
+      <div class="glossary-heading">
+        <div><p class="eyebrow light"><span></span> Consulta rápida</p><h2>Glossário essencial</h2></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="glossary-search" type="search" placeholder="Buscar um conceito..." aria-label="Buscar no glossário"></label>
+      </div>
+      <div class="glossary-grid" id="glossary-grid">
+        <article data-term="alelo"><b>Alelo</b><p>Versão alternativa de um gene.</p></article>
+        <article data-term="apoptose"><b>Apoptose</b><p>Morte celular programada e controlada.</p></article>
+        <article data-term="carcinogênico"><b>Carcinogênico</b><p>Agente capaz de aumentar o risco de câncer.</p></article>
+        <article data-term="fenótipo"><b>Fenótipo</b><p>Características observáveis resultantes de genes e ambiente.</p></article>
+        <article data-term="frequência alélica"><b>Frequência alélica</b><p>Proporção de um alelo em uma população.</p></article>
+        <article data-term="mutagênico"><b>Mutagênico</b><p>Agente que aumenta a ocorrência de mutações.</p></article>
+        <article data-term="não disjunção"><b>Não disjunção</b><p>Falha na separação de cromossomos durante divisão celular.</p></article>
+        <article data-term="pressão seletiva"><b>Pressão seletiva</b><p>Fator ambiental que afeta o sucesso reprodutivo.</p></article>
+        <article data-term="seleção natural"><b>Seleção natural</b><p>Reprodução diferencial associada a variações herdáveis.</p></article>
+        <article data-term="telômero"><b>Telômero</b><p>Região protetora nas extremidades dos cromossomos.</p></article>
+      </div>
+      <p class="no-results" id="no-glossary-results" hidden>Nenhum termo encontrado.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark small" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span><strong>BIO</strong>LAB</span></div>
+    <p>Material de estudo baseado nos conteúdos de aula de Mutações, Câncer e Teorias Evolutivas, da Prof.ª Dra. Júlia Fochezato.</p>
+    <div class="footer-links"><a href="#inicio">Voltar ao topo ↑</a><button data-reset-progress>Limpar progresso</button></div>
+  </footer>
+
+  <dialog class="quiz-dialog" id="quiz-dialog" aria-labelledby="quiz-title">
+    <div class="quiz-shell">
+      <button class="quiz-close" aria-label="Fechar quiz">×</button>
+      <div class="quiz-start" id="quiz-start">
+        <p class="eyebrow"><span></span> Prática ativa</p>
+        <h2 id="quiz-title">Escolha seu desafio</h2>
+        <p>São quatro questões por rodada. Você recebe a explicação logo após responder.</p>
+        <div class="quiz-modes">
+          <button data-mode="mutation"><span>01</span><b>Mutações</b><small>genes e cromossomos</small></button>
+          <button data-mode="cancer"><span>02</span><b>Câncer</b><small>controle celular</small></button>
+          <button data-mode="evolution"><span>03</span><b>Evolução</b><small>teorias e evidências</small></button>
+          <button data-mode="mixed"><span>✦</span><b>Desafio misto</b><small>todos os temas</small></button>
+        </div>
+        <p class="best-score" id="best-score">Seu melhor resultado aparecerá aqui.</p>
+      </div>
+
+      <div class="quiz-game" id="quiz-game" hidden>
+        <div class="quiz-progress-row"><span id="quiz-counter">Questão 1 de 4</span><b id="quiz-score">0 pontos</b></div>
+        <div class="quiz-progress"><i id="quiz-progress-bar"></i></div>
+        <p class="quiz-topic" id="quiz-topic">MUTAÇÕES</p>
+        <h2 id="quiz-question"></h2>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div class="quiz-feedback" id="quiz-feedback" hidden>
+          <span id="feedback-icon"></span>
+          <div><b id="feedback-title"></b><p id="feedback-text"></p></div>
+        </div>
+        <button class="button dark next-question" id="next-question" hidden>Próxima questão <span>→</span></button>
+      </div>
+
+      <div class="quiz-result" id="quiz-result" hidden>
+        <div class="result-ring"><strong id="result-score">0/4</strong><span>acertos</span></div>
+        <p class="eyebrow"><span></span> Rodada concluída</p>
+        <h2 id="result-title">Bom começo!</h2>
+        <p id="result-message"></p>
+        <div class="result-actions"><button class="button primary" id="retry-quiz">Tentar outra rodada</button><button class="button outline" id="close-result">Voltar ao estudo</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
