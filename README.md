@@ -22,4 +22,4 @@ Depois, acesse `http://localhost:4173`.
 
 ## Deploy
 
-O arquivo `vercel.json` configura a pasta `dist/` como saída publicada na Vercel.
+O arquivo `vercel.json` copia o conteúdo estático de `dist/` para a saída publicada pela Vercel.
