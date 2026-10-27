@@ -101,6 +101,33 @@ glossarySearch.addEventListener('input', () => {
   document.querySelector('#no-glossary-results').hidden = visible !== 0;
 });
 
+const studyChecks = [...document.querySelectorAll('[data-study-check]')];
+let studyState = {};
+try { studyState = JSON.parse(localStorage.getItem('biolab-study') || '{}'); } catch { studyState = {}; }
+
+function updateStudyProgress() {
+  studyChecks.forEach(check => { check.checked = Boolean(studyState[check.dataset.studyCheck]); });
+  const completed = studyChecks.filter(check => check.checked).length;
+  const percent = Math.round((completed / studyChecks.length) * 100);
+  document.querySelector('#study-progress-fill').style.width = `${percent}%`;
+  document.querySelector('#study-progress-value').textContent = `${percent}%`;
+  localStorage.setItem('biolab-study', JSON.stringify(studyState));
+}
+
+studyChecks.forEach(check => check.addEventListener('change', () => {
+  studyState[check.dataset.studyCheck] = check.checked;
+  updateStudyProgress();
+}));
+updateStudyProgress();
+
+document.querySelectorAll('.flashcard').forEach(card => {
+  card.setAttribute('aria-pressed', 'false');
+  card.addEventListener('click', () => {
+    const flipped = card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed', String(flipped));
+  });
+});
+
 const questions = [
   {topic:'Mutações', mode:'mutation', q:'Qual mutação pode ser transmitida aos descendentes?', options:['Uma mutação em célula da pele','Uma mutação em célula germinativa','Toda mutação somática','Apenas mutações benéficas'], answer:1, why:'Mutações germinativas podem estar presentes nos gametas e chegar ao descendente após a fecundação. Mutações somáticas, em geral, ficam restritas ao indivíduo.'},
   {topic:'Mutações', mode:'mutation', q:'Uma inserção de uma única base dentro de uma região codificadora tende a causar o quê?', options:['Sempre nenhum efeito','Troca de cromossomo inteiro','Deslocamento do quadro de leitura','Duplicação do genoma'], answer:2, why:'Como códons são lidos em trincas, inserir uma base muda o agrupamento das bases seguintes. Isso é chamado de frameshift ou mudança do quadro de leitura.'},
@@ -117,7 +144,27 @@ const questions = [
   {topic:'Integração', mode:'mixed', q:'Qual conexão entre mutações e evolução está correta?', options:['Toda mutação é uma adaptação','Mutações produzem variação sobre a qual a seleção pode atuar','A seleção cria mutações úteis','Mutações só ocorrem quando necessárias'], answer:1, why:'Mutações surgem sem direção em relação às necessidades do organismo e geram variantes. A seleção pode mudar a frequência dessas variantes.'},
   {topic:'Integração', mode:'mixed', q:'Uma mutação em uma célula somática que desativa controles do ciclo celular pode:', options:['Ser obrigatoriamente herdada pelos filhos','Contribuir para a formação de um tumor','Causar evolução imediata da espécie','Criar uma aneuploidia em todos os gametas'], answer:1, why:'Mutações somáticas em genes de controle podem permitir proliferação desregulada e contribuir para um tumor, mas não são normalmente transmitidas à prole.'},
   {topic:'Integração', mode:'mixed', q:'Em um solo escuro, besouros escuros deixam mais descendentes que os claros. O que se espera?', options:['Todos mudam de cor durante a vida','A frequência da variante escura aumenta nas gerações','A variação desaparece antes da seleção','O solo escolhe quais mutações surgem'], answer:1, why:'A reprodução diferencial altera a composição da população: a variante escura tende a aumentar de frequência ao longo das gerações.'},
-  {topic:'Integração', mode:'mixed', q:'Qual conjunto reúne apenas evidências de evolução?', options:['Fósseis, homologia e semelhança molecular','Uso e desuso, desejo e necessidade','Metástase, mitose e telomerase','G0, apoptose e não disjunção'], answer:0, why:'Registro fóssil, anatomia comparada e dados moleculares são linhas independentes de evidência que convergem para a evolução e ancestralidade comum.'}
+  {topic:'Integração', mode:'mixed', q:'Qual conjunto reúne apenas evidências de evolução?', options:['Fósseis, homologia e semelhança molecular','Uso e desuso, desejo e necessidade','Metástase, mitose e telomerase','G0, apoptose e não disjunção'], answer:0, why:'Registro fóssil, anatomia comparada e dados moleculares são linhas independentes de evidência que convergem para a evolução e ancestralidade comum.'},
+  {topic:'Mutações', mode:'mutation', q:'Por que uma substituição de base pode ser silenciosa?', options:['Porque todo DNA é não codificador','Porque códons diferentes podem indicar o mesmo aminoácido','Porque a célula remove todos os éxons','Porque substituições nunca são expressas'], answer:1, why:'O código genético é degenerado: mais de um códon pode codificar o mesmo aminoácido. Assim, a sequência muda, mas a proteína pode conservar aquele aminoácido.'},
+  {topic:'Mutações', mode:'mutation', q:'Qual alteração é classificada como euploidia?', options:['Trissomia do cromossomo 21','Monossomia do X','Presença de três conjuntos cromossômicos completos (3n)','Perda de um segmento cromossômico'], answer:2, why:'Euploidias alteram conjuntos cromossômicos completos, como 3n ou 4n. Monossomias e trissomias de cromossomos individuais são aneuploidias.'},
+  {topic:'Mutações', mode:'mutation', q:'Na translocação cromossômica, ocorre:', options:['Transferência de segmento para cromossomo não homólogo','Troca de uma única base','Duplicação obrigatória de todo o DNA','Separação normal das cromátides'], answer:0, why:'A translocação envolve a mudança de posição de um segmento, frequentemente entre cromossomos não homólogos. É uma mutação cromossômica estrutural.'},
+  {topic:'Mutações', mode:'mutation', q:'A não disjunção durante a meiose pode produzir gametas:', options:['Sempre haploides normais','Com cromossomos a mais ou a menos','Sem qualquer DNA','Com mutações apenas gênicas'], answer:1, why:'Quando cromossomos ou cromátides não se separam corretamente, a distribuição fica desigual, formando gametas n+1 ou n−1.'},
+  {topic:'Mutações', mode:'mutation', q:'A afirmação “o organismo produziu a mutação de que precisava” está:', options:['Correta para toda adaptação','Correta apenas em animais','Incorreta: mutações não surgem dirigidas pela necessidade','Incorreta porque mutações nunca afetam evolução'], answer:2, why:'Mutações surgem sem direção em relação às necessidades adaptativas. O ambiente seleciona entre variantes; não encomenda uma mutação específica.'},
+  {topic:'Câncer', mode:'cancer', q:'Qual é a diferença entre proto-oncogene e oncogene?', options:['São exatamente sinônimos','Proto-oncogene é normal; sua ativação inadequada pode originar oncogene','Oncogene sempre interrompe a divisão','Proto-oncogene só existe em tumores'], answer:1, why:'Proto-oncogenes exercem funções normais de crescimento e sinalização. Alterações que os ativam em excesso podem convertê-los em oncogenes.'},
+  {topic:'Câncer', mode:'cancer', q:'O que caracteriza a fase G0?', options:['Duplicação do DNA','Divisão do núcleo','Estado de quiescência fora do ciclo proliferativo','Formação obrigatória de tumor'], answer:2, why:'G0 é um estado sem divisão ativa. Algumas células podem voltar ao ciclo; outras permanecem em G0 por longos períodos.'},
+  {topic:'Câncer', mode:'cancer', q:'Herdar uma variante de predisposição ao câncer significa que:', options:['A doença é inevitável','A pessoa já nasce com metástase','O risco pode aumentar, mas outras alterações costumam ser necessárias','Todos os descendentes terão o mesmo tumor'], answer:2, why:'Predisposição genética altera probabilidade, não determina o resultado. Em geral, o desenvolvimento tumoral envolve outras mutações somáticas e fatores adicionais.'},
+  {topic:'Câncer', mode:'cancer', q:'Qual processo elimina de forma programada uma célula muito danificada?', options:['Apoptose','Metástase','Translocação','Aclimatação'], answer:0, why:'Apoptose é a morte celular programada. Ela funciona como uma barreira contra a permanência de células com danos graves.'},
+  {topic:'Câncer', mode:'cancer', q:'Por que se diz que a carcinogênese é um processo em múltiplas etapas?', options:['Porque um tumor muda de órgão a cada hora','Porque várias alterações podem se acumular e favorecer clones sucessivos','Porque toda célula se torna maligna após uma mutação','Porque apenas a meiose forma tumores'], answer:1, why:'Mutações e alterações regulatórias acumuladas podem conferir vantagens sucessivas de crescimento, sobrevivência e invasão a determinados clones celulares.'},
+  {topic:'Evolução', mode:'evolution', q:'Qual situação representa aclimatação, e não adaptação evolutiva?', options:['Aumento temporário da ventilação em grande altitude','Aumento de alelos vantajosos por gerações','Evolução de resistência bacteriana','Divergência de membros homólogos'], answer:0, why:'Aclimatação ocorre no indivíduo e pode ser reversível. Adaptação evolutiva envolve características herdáveis em populações ao longo das gerações.'},
+  {topic:'Evolução', mode:'evolution', q:'A deriva genética é especialmente importante em:', options:['Populações pequenas, onde o acaso tem grande efeito','Indivíduos que treinam muito','Populações infinitas e sem reprodução','Apenas células somáticas'], answer:0, why:'Em populações pequenas, eventos aleatórios podem alterar fortemente as frequências alélicas, mesmo sem relação com vantagem adaptativa.'},
+  {topic:'Evolução', mode:'evolution', q:'O fluxo gênico ocorre quando:', options:['Alelos se movem entre populações por migração e reprodução','Uma proteína é traduzida','Um cromossomo é duplicado','O ambiente produz o alelo ideal'], answer:0, why:'A migração de indivíduos ou gametas seguida de reprodução pode introduzir ou remover alelos de uma população.'},
+  {topic:'Evolução', mode:'evolution', q:'Na seleção estabilizadora, são geralmente favorecidos:', options:['Os dois extremos','Apenas fenótipos novos','Fenótipos intermediários','Alelos por puro acaso'], answer:2, why:'A seleção estabilizadora reduz os extremos e favorece valores intermediários, diminuindo a dispersão em torno da média.'},
+  {topic:'Evidências', mode:'evolution', q:'Em um cladograma, dois grupos são mais próximos quando:', options:['Aparecem lado a lado no papel','Têm o mesmo tamanho','Compartilham ancestral comum mais recente','Um vive atualmente dentro do outro'], answer:2, why:'O parentesco é determinado pelos nós e pela ancestralidade compartilhada, não pela proximidade visual das pontas ou por uma ordem de “progresso”.'},
+  {topic:'Evidências', mode:'evolution', q:'O registro fóssil ajuda a estudar evolução porque:', options:['Mostra todos os organismos que já existiram sem lacunas','Registra restos e vestígios em contextos geológicos','Prova que espécies são imutáveis','Substitui todas as outras evidências'], answer:1, why:'Fósseis documentam parte da história da vida e, combinados com geologia e outras evidências, revelam mudanças, extinções e formas transicionais.'},
+  {topic:'Integração', mode:'mixed', q:'Uma mutação em região regulatória pode:', options:['Nunca produzir efeito','Alterar quando ou quanto um gene é expresso','Sempre mudar a quantidade de cromossomos','Transformar diretamente um indivíduo em outra espécie'], answer:1, why:'Regiões regulatórias controlam a expressão gênica. Alterações nelas podem mudar intensidade, local ou momento de atividade de um gene.'},
+  {topic:'Integração', mode:'mixed', q:'Quando um antibiótico elimina bactérias sensíveis e resistentes sobrevivem, o antibiótico:', options:['Criou resistência dirigida em todas as bactérias','Selecionou variantes resistentes já presentes ou surgidas antes','Fez cada bactéria se acostumar','Impediu qualquer evolução'], answer:1, why:'O antibiótico atua como pressão seletiva. Variantes resistentes sobrevivem e deixam mais descendentes; ele não cria a mutação porque ela é necessária.'},
+  {topic:'Integração', mode:'mixed', q:'A expansão de um clone celular tumoral lembra seleção natural porque:', options:['Células com certas alterações podem proliferar mais que outras','Todas as células permanecem idênticas','O tecido escolhe conscientemente a mutação','A meiose ocorre dentro do tumor'], answer:0, why:'Dentro do tumor há variação e reprodução diferencial: clones com vantagens de proliferação ou sobrevivência podem aumentar de frequência.'},
+  {topic:'Integração', mode:'mixed', q:'Por que sequências de DNA semelhantes apoiam parentesco evolutivo?', options:['Porque toda semelhança é coincidência','Porque sequências são herdadas e acumulam mudanças ao longo do tempo','Porque o DNA só existe em animais','Porque organismos próximos têm sempre aparência idêntica'], answer:1, why:'Sequências são transmitidas entre gerações. Padrões compartilhados e diferenças acumuladas permitem inferir ancestrais comuns e graus de parentesco.'}
 ];
 
 const quizDialog = document.querySelector('#quiz-dialog');
@@ -210,6 +257,9 @@ document.querySelector('#retry-quiz').addEventListener('click', showQuizStart);
 document.querySelector('#close-result').addEventListener('click', () => quizDialog.close());
 document.querySelectorAll('[data-reset-progress]').forEach(button => button.addEventListener('click', () => {
   localStorage.removeItem('biolab-best');
+  localStorage.removeItem('biolab-study');
+  studyState = {};
+  updateStudyProgress();
   button.textContent = 'Progresso limpo ✓';
   setTimeout(() => button.textContent = 'Limpar progresso', 1800);
 }));

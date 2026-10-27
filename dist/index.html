@@ -42,7 +42,7 @@
         </div>
         <div class="hero-stats" aria-label="Conteúdo do site">
           <div><strong>4</strong><span>módulos</span></div>
-          <div><strong>16</strong><span>questões</span></div>
+          <div><strong>36</strong><span>questões</span></div>
           <div><strong>6</strong><span>evidências</span></div>
         </div>
       </div>
@@ -105,6 +105,23 @@
           <span class="trail-desc">Fósseis, anatomia, embriologia e DNA</span>
           <span class="trail-link">Explorar módulo <b>↗</b></span>
         </a>
+      </div>
+      <div class="study-dashboard" aria-labelledby="study-dashboard-title">
+        <div class="study-dashboard-copy">
+          <p class="eyebrow"><span></span> Plano inteligente</p>
+          <h3 id="study-dashboard-title">Estude em ciclos, não em maratonas</h3>
+          <p>Leia um módulo, explique com suas palavras e só então pratique. Marque cada etapa quando sentir que consegue ensiná-la sem consultar.</p>
+        </div>
+        <div class="study-checks">
+          <label><input type="checkbox" data-study-check="mutation"><span><b>01</b> Mutações</span></label>
+          <label><input type="checkbox" data-study-check="cancer"><span><b>02</b> Câncer</span></label>
+          <label><input type="checkbox" data-study-check="evolution"><span><b>03</b> Evolução</span></label>
+          <label><input type="checkbox" data-study-check="evidence"><span><b>04</b> Evidências</span></label>
+        </div>
+        <div class="study-progress" aria-live="polite">
+          <span><i id="study-progress-fill"></i></span>
+          <p><strong id="study-progress-value">0%</strong> da trilha marcada</p>
+        </div>
       </div>
     </section>
 
@@ -172,6 +189,39 @@
         </div>
       </div>
 
+      <div class="deep-dive">
+        <div class="deep-dive-title">
+          <p class="eyebrow"><span></span> Da base à proteína</p>
+          <h3>Uma troca pequena pode ter efeitos muito diferentes</h3>
+          <p>O efeito não depende apenas do “tamanho” da mutação, mas também de onde ela ocorre e de como altera a informação.</p>
+        </div>
+        <div class="effect-grid">
+          <article><span class="effect-code">AAA → AAG</span><b>Silenciosa</b><p>O códon muda, mas ainda codifica o mesmo aminoácido. Isso é possível porque o código genético é degenerado.</p><small>Nem toda troca muda a proteína.</small></article>
+          <article><span class="effect-code">GAG → GTG</span><b>Missense</b><p>Um aminoácido é substituído por outro. O efeito varia conforme a posição e as propriedades químicas envolvidas.</p><small>Exemplo clássico: variantes da β-globina.</small></article>
+          <article><span class="effect-code">UAU → UAA</span><b>Nonsense</b><p>A alteração cria um códon de parada prematuro, podendo produzir uma proteína encurtada e sem função.</p><small>“Sense” vira sinal de parada.</small></article>
+          <article><span class="effect-code">+1 ou −1 base</span><b>Frameshift</b><p>Inserção ou deleção desloca a leitura em trincas. Muitos códons posteriores podem ser alterados.</p><small>Não ocorre se a mudança for múltipla de 3.</small></article>
+        </div>
+        <div class="context-note">
+          <b>Regiões não codificadoras também importam.</b>
+          <p>Uma mutação em íntron pode não ter efeito, mas também pode afetar o splicing. Alterações em promotores e outras regiões regulatórias podem mudar quando, onde ou quanto um gene é expresso.</p>
+        </div>
+      </div>
+
+      <div class="origin-repair">
+        <div class="origin-copy">
+          <p class="eyebrow"><span></span> Origem e reparo</p>
+          <h3>Espontânea ou induzida?</h3>
+          <p>Mutações espontâneas podem surgir por erros de replicação ou alterações químicas naturais. Agentes mutagênicos aumentam a probabilidade de dano — mas a célula possui sistemas de reparo.</p>
+          <div class="repair-flow"><span>dano</span><i>→</i><span>reparo</span><i>→</i><span>DNA restaurado</span></div>
+          <div class="repair-flow fail"><span>dano</span><i>→</i><span>falha no reparo</span><i>→</i><span>mutação fixada</span></div>
+        </div>
+        <div class="mutagen-list">
+          <article><span>☀</span><div><b>Físicos</b><p>Radiação ultravioleta pode formar dímeros no DNA; radiação ionizante pode causar quebras.</p></div></article>
+          <article><span>⚗</span><div><b>Químicos</b><p>Algumas substâncias alteram bases ou interferem na replicação. O efeito depende da dose e da exposição.</p></div></article>
+          <article><span>◉</span><div><b>Biológicos</b><p>Alguns vírus podem interferir no controle celular ou inserir material genético em células hospedeiras.</p></div></article>
+        </div>
+      </div>
+
       <div class="mutation-levels">
         <div class="levels-copy">
           <p class="eyebrow"><span></span> Zoom: cromossomos</p>
@@ -201,6 +251,20 @@
           <div><b>Patau</b><span>trissomia do 13</span><em>autossômica</em></div>
           <div><b>Klinefelter</b><span>47, XXY</span><em>trissomia sexual</em></div>
         </div>
+      </div>
+
+      <div class="nondisjunction-explainer">
+        <div>
+          <p class="eyebrow"><span></span> Passo a passo</p>
+          <h3>Como surge uma aneuploidia?</h3>
+          <p>Na não disjunção, cromossomos homólogos ou cromátides-irmãs não se separam corretamente. Assim, alguns gametas recebem uma cópia a mais e outros, uma a menos.</p>
+        </div>
+        <div class="meiotic-flow" aria-label="Esquema simplificado de não disjunção">
+          <div><span class="chromosome-x">X</span><span class="chromosome-x alt">X</span><small>célula 2n</small></div><i>→</i>
+          <div><span class="chromosome-x pair">XX</span><span class="empty-set">∅</span><small>separação falha</small></div><i>→</i>
+          <div class="gamete-set"><span>n+1</span><span>n+1</span><span>n−1</span><span>n−1</span><small>gametas</small></div>
+        </div>
+        <p class="exam-trap"><b>Pegadinha de prova:</b> aneuploidia altera cromossomos isolados; euploidia altera conjuntos completos.</p>
       </div>
     </section>
 
@@ -256,6 +320,38 @@
           <span class="concept-num">T</span>
           <div><p class="label">TELOMERASE</p><h3>O relógio é contornado</h3><p>Telômeros encurtam com divisões. Muitas células cancerosas reativam a telomerase e mantêm a capacidade de se dividir.</p></div>
         </div>
+      </div>
+
+      <div class="carcinogenesis-block">
+        <div class="carcinogenesis-intro">
+          <p class="eyebrow light"><span></span> Um processo em etapas</p>
+          <h3>Câncer raramente depende de uma única mutação</h3>
+          <p>Uma célula acumula alterações ao longo do tempo. Cada vantagem de crescimento favorece a expansão daquele clone celular, aumentando a oportunidade para novas alterações.</p>
+        </div>
+        <div class="clone-timeline">
+          <div><span class="clone-cells one"><i></i></span><b>1. Iniciação</b><p>Uma alteração atinge um gene relevante.</p></div>
+          <div><span class="clone-cells two"><i></i><i></i><i></i></span><b>2. Expansão</b><p>O clone alterado prolifera mais.</p></div>
+          <div><span class="clone-cells three"><i></i><i></i><i></i><i></i><i></i></span><b>3. Progressão</b><p>Novas alterações aumentam a agressividade.</p></div>
+          <div><span class="clone-cells four"><i></i><i></i><i></i><i></i><i></i><i></i></span><b>4. Invasão</b><p>Células atravessam limites do tecido.</p></div>
+        </div>
+      </div>
+
+      <div class="cancer-clarity">
+        <article>
+          <p class="label">HEREDITÁRIO ≠ INEVITÁVEL</p>
+          <h3>Predisposição herdada</h3>
+          <p>Uma pessoa pode herdar uma variante que eleva a probabilidade de câncer. Geralmente, outras alterações somáticas ainda precisam ocorrer.</p>
+        </article>
+        <article>
+          <p class="label">ESPORÁDICO</p>
+          <h3>Alterações adquiridas</h3>
+          <p>Muitos cânceres resultam de mutações acumuladas nas células somáticas ao longo da vida, sem uma variante predisponente herdada.</p>
+        </article>
+        <article>
+          <p class="label">RISCO ≠ CERTEZA</p>
+          <h3>Probabilidade</h3>
+          <p>Exposição a um carcinógeno pode aumentar o risco, mas não determina sozinha que uma pessoa desenvolverá câncer.</p>
+        </article>
       </div>
 
       <div class="tumor-compare">
@@ -322,6 +418,32 @@
         </article>
       </div>
 
+      <div class="adaptation-clarifier">
+        <div class="clarifier-copy">
+          <p class="eyebrow"><span></span> Palavra traiçoeira</p>
+          <h3>Adaptação não é “se acostumar”</h3>
+          <p>Na evolução, adaptação é uma característica herdável que aumenta o sucesso reprodutivo em certo ambiente. Uma mudança reversível no indivíduo é <strong>aclimatação</strong>.</p>
+        </div>
+        <div class="clarifier-examples">
+          <article><span>INDIVÍDUO</span><b>Aclimatação</b><p>Ao chegar a grande altitude, uma pessoa aumenta a ventilação e, depois, a produção de hemácias.</p><em>Ocorre durante a vida; não muda a frequência de alelos.</em></article>
+          <article><span>POPULAÇÃO</span><b>Adaptação evolutiva</b><p>Ao longo de gerações, variantes hereditárias vantajosas em alta altitude tornam-se mais frequentes.</p><em>É resultado de evolução populacional.</em></article>
+        </div>
+      </div>
+
+      <div class="evolution-forces">
+        <div class="deep-dive-title">
+          <p class="eyebrow"><span></span> Síntese moderna</p>
+          <h3>Seleção natural não age sozinha</h3>
+          <p>A evolução pode ocorrer por diferentes mecanismos. Apenas a seleção natural produz adaptações de forma consistente.</p>
+        </div>
+        <div class="force-grid">
+          <article><span>↥</span><b>Mutação</b><p>Cria novos alelos e é a fonte primária de novidade genética.</p></article>
+          <article><span>⇄</span><b>Fluxo gênico</b><p>Move alelos entre populações por migração e reprodução.</p></article>
+          <article><span>⌁</span><b>Deriva genética</b><p>Altera frequências ao acaso, sobretudo em populações pequenas.</p></article>
+          <article><span>◇</span><b>Seleção natural</b><p>Favorece variantes herdáveis associadas a maior sucesso reprodutivo.</p></article>
+        </div>
+      </div>
+
       <div class="selection-lab">
         <div class="selection-copy">
           <p class="eyebrow"><span></span> Simulação</p>
@@ -346,6 +468,13 @@
         <div><span>2</span><b>Pressão seletiva</b><p>Recursos limitados, predadores e clima afetam sobrevivência e reprodução.</p></div>
         <div><span>3</span><b>Reprodução diferencial</b><p>Algumas variantes deixam, em média, mais descendentes.</p></div>
         <div><span>4</span><b>Mudança populacional</b><p>A frequência das variantes muda ao longo das gerações.</p></div>
+      </div>
+
+      <div class="selection-types">
+        <div class="selection-types-title"><p class="eyebrow"><span></span> Três padrões</p><h3>Como a distribuição pode mudar</h3></div>
+        <article><div class="mini-graph directional"><i></i><b></b></div><h4>Direcional</h4><p>Um extremo é favorecido. Ex.: resistência bacteriana diante de antibiótico.</p></article>
+        <article><div class="mini-graph stabilizing"><i></i><b></b></div><h4>Estabilizadora</h4><p>Fenótipos intermediários têm vantagem; extremos são desfavorecidos.</p></article>
+        <article><div class="mini-graph disruptive"><i></i><b></b><em></em></div><h4>Disruptiva</h4><p>Os dois extremos são favorecidos em relação ao intermediário.</p></article>
       </div>
     </section>
 
@@ -403,13 +532,62 @@
         <span>H</span><p><strong>Homologia = História compartilhada.</strong> Pense no “H”. A função pode mudar; a origem evolutiva é comum.</p>
         <span>A</span><p><strong>Analogia = Atividade parecida.</strong> A função se parece; a origem evolutiva é diferente.</p>
       </div>
+
+      <div class="tree-reader">
+        <div class="tree-copy">
+          <p class="eyebrow light"><span></span> Leitura de cladogramas</p>
+          <h3>Parentesco não é uma escada</h3>
+          <p>Em uma árvore filogenética, cada nó representa um ancestral comum hipotético. Dois grupos são mais próximos quando compartilham um ancestral comum mais recente.</p>
+          <ul>
+            <li>A posição esquerda/direita pode girar sem mudar o parentesco.</li>
+            <li>Espécies atuais não são “mais evoluídas” umas que outras.</li>
+            <li>A ponta não vira outra ponta; ambas descendem de ancestrais comuns.</li>
+          </ul>
+        </div>
+        <div class="cladogram" aria-label="Cladograma simplificado com quatro grupos">
+          <div class="branch root"><span>Ancestral</span></div>
+          <div class="branch b1"><span>Grupo A</span></div>
+          <div class="branch b2"><span>Grupo B</span></div>
+          <div class="branch b3"><span>Grupo C</span></div>
+          <div class="branch b4"><span>Grupo D</span></div>
+          <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="synthesis-section" id="sintese">
+      <div class="synthesis-heading">
+        <p class="eyebrow"><span></span> A grande conexão</p>
+        <h2>Da molécula à evolução</h2>
+        <p>Os quatro módulos não são assuntos separados. Eles descrevem níveis diferentes de uma mesma história biológica.</p>
+      </div>
+      <div class="scale-flow">
+        <article><span>01</span><b>DNA</b><p>Uma mutação cria uma nova variante.</p></article><i>→</i>
+        <article><span>02</span><b>Proteína</b><p>A função pode mudar — ou permanecer igual.</p></article><i>→</i>
+        <article><span>03</span><b>Célula</b><p>O metabolismo ou o ciclo celular pode ser afetado.</p></article><i>→</i>
+        <article><span>04</span><b>Organismo</b><p>Surge um efeito no fenótipo e na reprodução.</p></article><i>→</i>
+        <article><span>05</span><b>População</b><p>A frequência da variante pode mudar nas gerações.</p></article>
+      </div>
+      <div class="synthesis-caveat"><b>Atenção:</b><p>Uma mutação somática que contribui para câncer produz evolução clonal dentro do corpo, mas normalmente não entra no patrimônio genético da população, pois não está nos gametas.</p></div>
+
+      <div class="flashcard-zone">
+        <div class="flashcard-intro"><p class="eyebrow"><span></span> Recuperação ativa</p><h3>Flashcards: responda antes de virar</h3><p>Clique em cada cartão apenas depois de formular a resposta mentalmente.</p></div>
+        <div class="flashcards">
+          <button class="flashcard"><span class="front"><small>PERGUNTA 01</small><b>Mutação é sempre prejudicial?</b><em>virar cartão ↻</em></span><span class="back"><small>RESPOSTA</small><b>Não.</b><p>Pode ser neutra, deletéria ou benéfica, dependendo do efeito e do ambiente.</p></span></button>
+          <button class="flashcard"><span class="front"><small>PERGUNTA 02</small><b>O que a p53 faz?</b><em>virar cartão ↻</em></span><span class="back"><small>RESPOSTA</small><b>Protege a célula.</b><p>Pode parar o ciclo, favorecer reparo e acionar apoptose diante de danos.</p></span></button>
+          <button class="flashcard"><span class="front"><small>PERGUNTA 03</small><b>Seleção cria variação?</b><em>virar cartão ↻</em></span><span class="back"><small>RESPOSTA</small><b>Não.</b><p>Ela atua sobre variações herdáveis que já existem na população.</p></span></button>
+          <button class="flashcard"><span class="front"><small>PERGUNTA 04</small><b>Homologia indica o quê?</b><em>virar cartão ↻</em></span><span class="back"><small>RESPOSTA</small><b>Ancestralidade comum.</b><p>A função pode ser diferente; a origem evolutiva é compartilhada.</p></span></button>
+          <button class="flashcard"><span class="front"><small>PERGUNTA 05</small><b>O indivíduo evolui?</b><em>virar cartão ↻</em></span><span class="back"><small>RESPOSTA</small><b>Não, no sentido populacional.</b><p>Populações evoluem quando frequências alélicas mudam entre gerações.</p></span></button>
+          <button class="flashcard"><span class="front"><small>PERGUNTA 06</small><b>Risco significa certeza?</b><em>virar cartão ↻</em></span><span class="back"><small>RESPOSTA</small><b>Não.</b><p>Fatores de risco alteram probabilidades; não determinam isoladamente o resultado.</p></span></button>
+        </div>
+      </div>
     </section>
 
     <section class="review-section" id="revisao">
       <div class="review-copy">
         <p class="eyebrow"><span></span> Hora de consolidar</p>
         <h2>Entender é bom.<br><em>Conseguir explicar</em> é melhor.</h2>
-        <p>Responda às questões e receba feedback imediato. O quiz mistura conceitos e situações-problema.</p>
+        <p>Treine com um banco de 36 questões e receba feedback imediato. O quiz mistura conceitos, interpretação e situações-problema.</p>
         <button class="button primary coral-button" data-open-quiz>Iniciar quiz <span>→</span></button>
       </div>
       <div class="review-board" aria-hidden="true">
@@ -427,15 +605,25 @@
       </div>
       <div class="glossary-grid" id="glossary-grid">
         <article data-term="alelo"><b>Alelo</b><p>Versão alternativa de um gene.</p></article>
+        <article data-term="adaptação"><b>Adaptação</b><p>Característica herdável favorecida em certo ambiente.</p></article>
         <article data-term="apoptose"><b>Apoptose</b><p>Morte celular programada e controlada.</p></article>
         <article data-term="carcinogênico"><b>Carcinogênico</b><p>Agente capaz de aumentar o risco de câncer.</p></article>
+        <article data-term="clone celular"><b>Clone celular</b><p>Conjunto de células descendentes de uma mesma célula.</p></article>
+        <article data-term="deriva genética"><b>Deriva genética</b><p>Mudança aleatória das frequências alélicas.</p></article>
         <article data-term="fenótipo"><b>Fenótipo</b><p>Características observáveis resultantes de genes e ambiente.</p></article>
+        <article data-term="fitness aptidão"><b>Fitness</b><p>Contribuição reprodutiva relativa para a geração seguinte.</p></article>
+        <article data-term="fluxo gênico"><b>Fluxo gênico</b><p>Movimento de alelos entre populações.</p></article>
+        <article data-term="frameshift quadro leitura"><b>Frameshift</b><p>Deslocamento do quadro de leitura por inserção ou deleção.</p></article>
         <article data-term="frequência alélica"><b>Frequência alélica</b><p>Proporção de um alelo em uma população.</p></article>
+        <article data-term="metástase"><b>Metástase</b><p>Disseminação de células malignas para outros locais.</p></article>
         <article data-term="mutagênico"><b>Mutagênico</b><p>Agente que aumenta a ocorrência de mutações.</p></article>
         <article data-term="não disjunção"><b>Não disjunção</b><p>Falha na separação de cromossomos durante divisão celular.</p></article>
+        <article data-term="oncogene"><b>Oncogene</b><p>Gene alterado ou hiperativo que favorece proliferação.</p></article>
         <article data-term="pressão seletiva"><b>Pressão seletiva</b><p>Fator ambiental que afeta o sucesso reprodutivo.</p></article>
+        <article data-term="proto-oncogene"><b>Proto-oncogene</b><p>Gene normal que participa de crescimento e sinalização.</p></article>
         <article data-term="seleção natural"><b>Seleção natural</b><p>Reprodução diferencial associada a variações herdáveis.</p></article>
         <article data-term="telômero"><b>Telômero</b><p>Região protetora nas extremidades dos cromossomos.</p></article>
+        <article data-term="variabilidade genética"><b>Variabilidade genética</b><p>Diversidade de alelos e genótipos em uma população.</p></article>
       </div>
       <p class="no-results" id="no-glossary-results" hidden>Nenhum termo encontrado.</p>
     </section>
@@ -453,7 +641,7 @@
       <div class="quiz-start" id="quiz-start">
         <p class="eyebrow"><span></span> Prática ativa</p>
         <h2 id="quiz-title">Escolha seu desafio</h2>
-        <p>São quatro questões por rodada. Você recebe a explicação logo após responder.</p>
+        <p>São quatro questões por rodada, sorteadas de um banco com 36 itens. Você recebe a explicação logo após responder.</p>
         <div class="quiz-modes">
           <button data-mode="mutation"><span>01</span><b>Mutações</b><small>genes e cromossomos</small></button>
           <button data-mode="cancer"><span>02</span><b>Câncer</b><small>controle celular</small></button>
